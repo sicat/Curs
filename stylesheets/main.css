@@ -49,6 +49,17 @@ table {
 
 /*
 ==================================
+CUSTOM STYLES
+==================================
+*/
+
+body {
+  color: #888;
+  font: 300 16px/22px "Lato" "Open Sans" "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/*
+==================================
 GRID
 ==================================
 */
@@ -56,8 +67,8 @@ GRID
 /* ??? - Cambiant propietat de box-sizing a borde-box per a tots els navegadors - selector universal */
 
 *,
-*: before,
-*: after {
+*:before,
+*:after {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -93,6 +104,12 @@ GRID
 
 /* Columnas reutilizables */
 
+.col-1-3,
+.col-2-3 {
+  display: inline-block;
+  vertical-align: top;
+}
+
 .col-1-3 {
   width: 33.33%;
 }
@@ -102,12 +119,6 @@ GRID
 }
 
 /* Se muestren como inline-block --> alineación vertical esté config en top */
-
-.col-1-3,
-.col-2-3 {
-  display: inline-block;
-  vertical-align: top;
-}
 
 /*
 ==================================
@@ -138,13 +149,66 @@ TYPOGRAPHY
 ==================================
 */
 
-h1,
-h3,
-h4,
-h5,
-p {
+h1, h2, h3, h4 {
+  color: #648880;
+}
+
+h1, h3, h4, h5, p {
   /* afegim espai vertical entre elements - 22px */
   margin-bottom: 22px;
+}
+
+h1 {
+  font-size: 36px;
+  line-height: 44px;
+}
+
+h2 {
+  font-size: 24px;
+  line-height: 44px;
+}
+
+h3 {
+  font-size: 21px;
+}
+
+h4 {
+  font-size: 18px;
+}
+
+h5 {
+  color: #a9b2b9;
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+/* Redefinir elem restablecidos */
+strong {
+  font-weight: 400;
+}
+
+cite,
+em {
+  font-style: italic;
+}
+
+/*
+==================================
+LINKS
+==================================
+*/
+a {
+  color: #648880;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #a9b2b9;
+}
+
+p a {
+  border-bottom: 1px solid #dfe2e5;
 }
 
 /*
@@ -172,10 +236,29 @@ PRIMARY HEADER
 ==================================
 */
 
+/* ????????? hi ha alguna rao per a que les propietats estiguin en aquest orddre? */
+
 .logo {
   border-top: 4px solid #648880;
   float: left;
+  font-size: 48px;
+  font-weight: 100;
+  letter-spacing: .5px;
+  line-height: 44px;
   padding: 40px 0 22px 0;
+  text-transform: uppercase;
+}
+
+.tagline {
+  margin: 66px 0 22px 0;
+  text-align: right;
+}
+
+.primary-nav {
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: .5px;
+  text-transform: uppercase;
 }
 
 /*
@@ -186,12 +269,25 @@ PRIMARY FOOTER
 
 /* Posem paddin a la part sup i inf per separar-lo del reste de la pag */
 .primary-footer {
+  color: #648880;
+  font-size: 14px;
   padding-bottom: 44px;
   padding-top: 44px;
 }
 
 .primary-footer small {
   float: left;
+  font-weight: 400;
+}
+
+/*
+==================================
+NAVIGATION
+==================================
+*/
+
+.nav {
+  text-align: right;
 }
 
 /*
@@ -202,5 +298,20 @@ HOME
 
 /* Aplica padding en los cuatro lados del HOME section */
 .hero {
+  line-height: 44px; /* ¿?¿?¿¿?¿? */
   padding: 22px 80px 66px 80px;
+  text-align: center;
+}
+
+.hero h2 {
+  font-size: 36px;
+}
+
+.hero p {
+  font-size: 24px;
+  font-weight: 100;
+}
+
+.teaser a:hover h3 {
+  color: #a9b2b9;
 }
